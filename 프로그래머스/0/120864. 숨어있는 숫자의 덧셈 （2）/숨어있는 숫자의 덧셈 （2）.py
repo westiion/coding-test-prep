@@ -10,11 +10,4 @@ def solution(my_string):
                 temp=''
     if temp:
         num.append(int(temp))
-        
-    if num:
-        return sum(num)
-    
-    else:
-        return 0
-
-                
+    return sum(num)  
