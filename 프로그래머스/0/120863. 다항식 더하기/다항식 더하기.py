@@ -1,25 +1,29 @@
 def solution(polynomial):
-    x_sum = 0
-    num_sum = 0
-
-    for term in polynomial.split(' + '):
+    result=[0,0]
+    poly=polynomial.split(' + ')
+    for term in poly:
         if 'x' in term:
             if term == 'x':
-                x_sum += 1
+                result[0]+=1
             else:
-                x_sum += int(term[:-1])
+                result[0]+=int(term[:-1])
         else:
-            num_sum += int(term)
-
-    answer = []
-
-    if x_sum > 0:
-        if x_sum == 1:
-            answer.append('x')
+            result[1]+=int(term)
+            
+    if result[0]:
+        if result[0]==1:
+            result[0]=''
+            
+        if result[1]:
+            return f'{result[0]}x + {result[1]}'
         else:
-            answer.append(str(x_sum) + 'x')
-
-    if num_sum > 0:
-        answer.append(str(num_sum))
-
-    return ' + '.join(answer)
+            return f'{result[0]}x'
+    else:
+        if result[1]:
+            return f'{result[1]}'
+        else:
+            pass
+        
+        
+            
+            
