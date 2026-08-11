@@ -24,6 +24,3 @@ def solution(polynomial):
         else:
             pass
         
-        
-            
-            
